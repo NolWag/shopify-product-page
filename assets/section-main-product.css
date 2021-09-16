@@ -774,3 +774,56 @@ a.product__text {
   justify-content: space-between;
   align-items: center;
 }
+
+.product__addons-section {
+  display: flex;
+  justify-content: center;
+}
+.product__addons-container {
+  border: solid #000 1px;
+  border-radius: 5px;
+}
+.product__addons-title {
+  text-align: center;
+  margin: 0;
+}
+.product__addons-image {}
+.product__addons-paragraph {
+  text-align: center;
+  margin: 0;
+}
+
+
+
+
+.alt-content__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.alt-content__content {
+  max-width: 30%;
+  position: absolute;
+  left: 10%;
+  background-color: #fff;
+  border-radius: 38px;
+  padding: 10px 20px;
+}
+
+.alt-content__content-switch {
+  left: unset;
+  right: 10%;
+}
+
+.alt-content__image {
+  margin-left: 200px;
+  border-radius: 38px;
+}
+
+.alt-content__image--right {
+  margin-right: 200px !important;
+}

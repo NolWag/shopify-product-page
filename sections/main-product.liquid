@@ -285,6 +285,19 @@
                 </div>
               </div>
             </noscript>
+            
+          {%- when 'add_ons' -%}
+            <h2>Lorem ipsum dolor sit amet!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fermentum orci vitae imperdiet condimentum.</p>
+            <p>Donec sed egestas purus, vestibulum faucibus ante. Quisque malesuada, nibh quis sodales tempor, felis metus dictum neque, sagittis sollicitudin ligula lorem tempor nunc.</p>
+            <div class="product__addons-section" id="add-ons__add-to-cart">
+              <a class="product__addons-container">
+                <h3 class="product__addons-title">{{ block.settings.add-ons-product-one.title }}</h3>
+                <img class="product__addons-image"" src="{{ block.settings.add-ons-product-one | img_url: 'medium'}}" />
+                <p class="product__addons-paragraph">{{ block.settings.add-ons-product-one.price | money }}</p>
+              </a>
+            </div>
+
           {%- when 'buy_buttons' -%}
             <div {{ block.shopify_attributes }}>
               <product-form class="product-form">
@@ -586,6 +599,19 @@
           ],
           "default": "button",
           "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+        }
+      ]
+    },
+    {
+      "type": "add_ons",
+      "name": "t:sections.main-product.blocks.add_ons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "product",
+          "id": "add-ons-product-one",
+          "label": "t:sections.main-product.blocks.add_ons.settings.show_dynamic_checkout.label",
+          "info": "t:sections.main-product.blocks.add_ons.settings.show_dynamic_checkout.info"
         }
       ]
     },

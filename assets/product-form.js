@@ -59,4 +59,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
     optHalfContainer.style.display = "none"
   })
 
+  const addOns_addToCart = document.getElementById('add-ons__add-to-cart')
+
+  addOns_addToCart.addEventListener('click', function() {
+    console.log('we in')
+
+    var http = new XMLHttpRequest();
+    var url = '/cart/add.js';
+    var params = 'quantity=1&id=40965597790386';
+    http.open('POST', url, true);
+
+    //Send the proper header information along with the request
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    // http.onreadystatechange = function() {//Call a function when the state changes.
+    //     if(http.readyState == 4 && http.status == 200) {
+    //         alert(http.responseText);
+    //     }
+    // }
+    http.send(params);
+
+    alert('Added to cart!')
+
+  })
+
+
 })
+

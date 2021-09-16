@@ -1,0 +1,57 @@
+<div class="alt-content__wrapper page-width">
+    {% for block in section.blocks %}
+    <div class="alt-content__container ">
+        <div class="alt-content__content {% if block.settings.alternate %} alt-content__content-switch {% endif %}">
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.paragraph }}</p>
+        </div>
+        <img class="alt-content__image {% if block.settings.alternate %} alt-content__image--right {% endif %}" src="{{ block.settings.image | img_url: '1000x' }}" />
+    </div>
+    {% endfor %}
+</div>
+{% schema %}
+{
+  "name": "Alternating Content",
+  "class": "spaced-section spaced-section--full-width",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-with-text.settings.image.label"
+    }
+  ],
+  "blocks": [
+    {
+        "name": "Alternating-Content",
+        "type": "heading",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "text",
+                "id": "paragraph",
+                "label": "Paragraph"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "image"
+            },
+            {
+                "type": "checkbox",
+                "id": "alternate",
+                "label": "Alternate Sides"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Alternating Content"
+    }
+  ]
+}
+{% endschema %}
